@@ -1,27 +1,31 @@
-# DLangSDK 🔧
+<p align="center">
+  <img src="DevStacks-Logo.png" alt="DLangSDK Logo" width="200"/>
+</p>
 
-**DLangSDK** is the official universal compiler toolkit of the [DevStacks.io](https://github.com/DevStacks-io) ecosystem.
 
-This SDK unifies all DevStacks programming languages under a single launcher, offering developers a centralized way to compile, run, and manage cross-language projects.
+# 🧠 DLangSDK by DevStacks
 
----
+DLangSDK is the master SDK from DevStacks, bundling together six powerful programming stacks, each designed for a specific domain.
 
-## 🧩 Included Compilers
+## 🔧 Included SDKs
 
-- `dclang` – DClang (C)
-- `dcplus` – DCPlus (C++)
-- `drust` – DRust (Rust)
-- `dpy` – DPy (Python)
-- `dgo` – DGo (Go)
-- *(more coming soon)*
+| Stack Name         | Description                                     |
+|--------------------|-------------------------------------------------|
+| HobbyStackSDK      | For hobbyist languages: DPhx, DScala, DHask     |
+| WebAppStackSDK     | Web frontend & full-stack: KScript, KTyped, etc |
+| MobileStackSDK     | For Dart, Kotlin, Swift based compilers         |
+| BackendStackSDK    | Java, Go, .NET languages for server-side dev     |
+| SystemsStackSDK    | C, C++, Rust, Zig, Nim and system tools          |
+| DataStackSDK       | Python, Julia, R, KLab and scientific languages |
 
----
+Each stack includes prebuilt compilers renamed with the DevStacks branding.
 
-## 🚀 Usage
+## 🔌 How to Use
 
-### 🔹 Windows
+```bash
+# On Linux
+chmod +x dlang.sh
+./dlang.sh
 
-Run the following from Command Prompt or double-click:
-
-```bat
+# On Windows
 dlang.bat
