@@ -1,18 +1,28 @@
 @echo off
-echo.
 echo [DLangSDK] Launching DevStacks Compiler...
-echo Available Compilers:
-echo - dclang
-echo - dcplus
-echo - drust
-echo - dpy
-echo - dgo
-echo.
 
-set /p lang="Enter compiler (e.g., dpy): "
-if exist bin\%lang%.exe (
-    echo Launching %lang%...
-    bin\%lang%.exe
-) else (
-    echo Compiler not found in bin\
+REM List of SDK directories
+set SDK_DIRS=HobbyStackSDK WebAppStackSDK MobileStackSDK BackendStackSDK SystemsStackSDK DataStackSDK
+
+echo Available Compilers:
+for %%D in (%SDK_DIRS%) do (
+    for %%F in (bin\%%D\*.exe) do (
+        echo - %%~nF
+    )
 )
+
+set /p compiler=Enter compiler (e.g., dpy):
+
+set FOUND=0
+for %%D in (%SDK_DIRS%) do (
+    if exist "bin\%%D\%compiler%.exe" (
+        echo Launching %compiler% from bin\%%D...
+        start "" "bin\%%D\%compiler%.exe"
+        set FOUND=1
+        goto :done
+    )
+)
+
+echo ❌ Compiler "%compiler%" not found in any SDK.
+
+:done
